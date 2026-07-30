@@ -1,0 +1,5 @@
+# Aggregate list for local development. The Dockerfile does NOT use this file:
+# it resolves requirements-core.txt and requirements-rag.txt together in a
+# single pip pass so shared transitive dependencies get one consistent answer.
+-r requirements-core.txt
+-r requirements-rag.txt

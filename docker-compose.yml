@@ -1,0 +1,154 @@
+# docker-compose.yml — three services: postgres, FastAPI backend, nginx frontend.
+#
+# Port mapping notes:
+#   - Postgres is mapped to host port 15432 so it does NOT clash with a
+#     locally-installed Postgres on 5432. To connect from your host, use:
+#         psql -h localhost -p 15432 -U noc_user noc_portal
+#     Containers talk to it as `postgres:5432` over the internal network.
+#   - Backend is mapped to host port 18000 because 8000 is in use on the VM.
+#     The frontend hits ${window.location.hostname}:18000 from the browser.
+#   - Frontend is on host port 5173.
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: noc-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: noc_user
+      POSTGRES_PASSWORD: noc_password
+      POSTGRES_DB: noc_portal
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "15432:5432"      # host:container — host port changed to avoid clash
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U noc_user -d noc_portal"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - noc-net
+
+  backend:
+    # Docker's default json-file driver has no size cap; without this
+    # /var/lib/docker/containers/<id>/<id>-json.log grows forever and
+    # eventually fills the root filesystem.
+    logging:
+      driver: json-file
+      options:
+        max-size: "20m"
+        max-file: "5"
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: noc-backend
+    restart: unless-stopped
+    environment:
+      # ── Phase 2: configuration apply (WRITES TO SWITCHES) ──────────
+      # Leave BOTH unset to keep the portal read-only.
+      # Enable only after validating checkpoint/rollback on a lab device.
+      # - CONFIG_APPLY_ENABLED=1
+      # - CONFIG_APPLY_TOKEN=change-me-to-a-long-random-string
+      # - CONFIG_CONFIRM_WINDOW_SECONDS=300
+      # Container-to-container hostname is `postgres`, internal port 5432
+      DATABASE_URL: postgresql://noc_user:noc_password@postgres:5432/noc_portal
+      PYTHONUNBUFFERED: "1"
+      # ── Retention ──────────────────────────────────────────────────
+      # ONE window for every history table (port_stats, arp_entries,
+      # command_logs, snapshots, server_metrics, audit_events, alerts,
+      # config changes, LACP runs). Swept hourly by retention.py.
+      # Inventory — switches, servers, templates, compliance rules — is
+      # NEVER swept, at any window.
+      # ── Portal login (NOC_PORTAL_LOCAL_ADMIN_V1) ─────────────────
+      # Single local administrator. Defined here rather than in code so
+      # the credential is not baked into the image. Change the password
+      # before this is reachable outside a trusted network.
+      NOC_ADMIN_USERNAME: "${NOC_ADMIN_USERNAME:-admin}"
+      NOC_ADMIN_PASSWORD: "${NOC_ADMIN_PASSWORD:-MindSparks!008}"
+      NOC_SESSION_TTL_SECONDS: "${NOC_SESSION_TTL_SECONDS:-28800}"
+
+      # ── Memory ceilings and self-healing ─────────────────────────
+      SERVER_MAX_WORKERS: "${SERVER_MAX_WORKERS:-25}"
+      SERVER_SAMPLE_SECONDS: "${SERVER_SAMPLE_SECONDS:-10.0}"
+      SERVER_DB_WRITE_SECONDS: "${SERVER_DB_WRITE_SECONDS:-60}"
+      SERVER_RING_SIZE: "${SERVER_RING_SIZE:-180}"
+      MALLOC_ARENA_MAX: "2"
+      MALLOC_TRIM_THRESHOLD_: "131072"
+      NOC_MEM_TRIM_MINUTES: "${NOC_MEM_TRIM_MINUTES:-10}"
+      NOC_MEM_WATCHDOG_SECONDS: "${NOC_MEM_WATCHDOG_SECONDS:-60}"
+      NOC_MEM_HIGH_WATER: "${NOC_MEM_HIGH_WATER:-0.70}"
+      NOC_MEM_CRITICAL: "${NOC_MEM_CRITICAL:-0.85}"
+      NOC_VACUUM_AFTER_SWEEP: "${NOC_VACUUM_AFTER_SWEEP:-1}"
+      NOC_RETENTION_DAYS: "${NOC_RETENTION_DAYS:-7}"
+      NOC_FORENSIC_RETENTION_DAYS: "${NOC_FORENSIC_RETENTION_DAYS:-7}"
+      # Capture threads. Each is a blocking SSH session, so this is the
+      # real cap on concurrent connections to the fleet.
+      NOC_SCHEDULER_THREADS: "${NOC_SCHEDULER_THREADS:-20}"
+      # Chatbot / Ollama configuration
+      OLLAMA_URL: "http://10.25.167.101:11434"
+      OLLAMA_MODEL: "qwen3:32b"
+      OLLAMA_TIMEOUT: "120"
+      # RAG layer — OpenAI client points at Ollama /v1 so data stays on-prem.
+      RAG_OPENAI_BASE_URL: "http://10.25.167.101:11434/v1"
+      RAG_OPENAI_API_KEY: "ollama"
+      RAG_EMBED_MODEL: "nomic-embed-text"
+      RAG_CHAT_MODEL: "qwen3:32b"
+      RAG_CHROMA_DIR: "/data/chroma"
+      RAG_SYNC_MINUTES: "5"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - chroma_data:/data/chroma
+    ports:
+      - "18000:8000"
+
+    # ══════════════════════════════════════════════════════════════════
+    # MEMORY CEILING — this is the safeguard that keeps a runaway backend
+    # from taking the whole VM down with it.
+    #
+    # Observed in production: this container climbed 4.6 -> 6.9 -> 9.7 ->
+    # 10.6 GiB on a 15.6 GiB host while holding ~350 threads. With no limit
+    # set, Docker lets a container consume everything, so the kernel OOM
+    # killer eventually fires against the HOST — which is why the VM became
+    # unreachable rather than just the portal failing.
+    #
+    # With mem_limit, the cgroup is capped: the kernel kills THIS container
+    # instead, and `restart: unless-stopped` brings it straight back. The
+    # portal blips; the VM, Studio, and your SSH session survive.
+    #
+    # This is containment, not a cure — it stops the crash, it does not stop
+    # the growth. Keep it in place while the leak is being tracked down.
+    mem_limit: ${NOC_BACKEND_MEM_LIMIT:-3g}
+    memswap_limit: ${NOC_BACKEND_MEM_LIMIT:-3g}   # equal to mem_limit = no swap
+    mem_reservation: 512m
+    pids_limit: 256          # a healthy backend sits well under 50 threads
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - noc-net
+    # seed.py creates tables AND adds any missing v2/v3 columns
+    # idempotently — so we don't need a chain of migration scripts here.
+    command: sh -c "python seed.py && uvicorn main:app --host 0.0.0.0 --port 8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: noc-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    networks:
+      - noc-net
+
+volumes:
+  postgres_data:
+  chroma_data:
+
+networks:
+  noc-net:
+    driver: bridge

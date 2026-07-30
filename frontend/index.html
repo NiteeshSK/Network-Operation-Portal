@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HPE NOC Portal</title>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <link rel="stylesheet" href="styles.css" />
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.23.10/babel.min.js"></script>
+
+<!-- NOC_PORTAL_KILL_SECOND_LOGIN_RUNTIME_V1 -->
+<script>
+  (function () {
+    window.__nocPortalOuterLoginActive = true;
+
+    var originalSetItem = window.localStorage.setItem.bind(window.localStorage);
+    window.localStorage.setItem = function (key, value) {
+      if (key === 'noc_force_login' || key === 'force_login' || key === 'loggedIn') {
+        return;
+      }
+      return originalSetItem(key, value);
+    };
+
+    function killSecondLoginVisuals() {
+      var text = document.body ? document.body.innerText.toLowerCase() : '';
+      var looksLikeFullSecondLogin =
+        text.includes('first-time login') ||
+        text.includes('pick switches') ||
+        text.includes('select switches') ||
+        text.includes('admin login') ||
+        text.includes('login to continue');
+
+      if (!looksLikeFullSecondLogin) return;
+
+      var buttons = Array.from(document.querySelectorAll('button, a, [role="button"]'));
+      var hasSwitchUnlock = buttons.some(function (el) {
+        return (el.textContent || '').toLowerCase().includes('unlock');
+      });
+
+      if (hasSwitchUnlock) return;
+    }
+
+    window.addEventListener('DOMContentLoaded', killSecondLoginVisuals);
+    setTimeout(killSecondLoginVisuals, 500);
+    setTimeout(killSecondLoginVisuals, 1500);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="root">
+    <div style="padding:40px;text-align:center;color:#6b7280">Loading…</div>
+  </div>
+  <script type="text/babel" data-presets="react" src="app.jsx"></script>
+<!-- NOC_PORTAL_EXISTING_LOGOUT_WIRE_V1 -->
+<script>
+  (function () {
+    if (window.__nocExistingLogoutWireV1) return;
+    window.__nocExistingLogoutWireV1 = true;
+
+    async function nocPortalLogout() {
+      try {
+        await fetch('/api/noc/portal/logout', {
+          method: 'POST',
+          credentials: 'include'
+        });
+      } catch (error) {
+        // Even if the request fails, return to login so the user view is cleared.
+      } finally {
+        window.location.href = '/login';
+      }
+    }
+
+    document.addEventListener('click', function (event) {
+      const target = event.target && event.target.closest
+        ? event.target.closest('button, a, [role="button"]')
+        : null;
+
+      if (!target) return;
+
+      const text = (target.textContent || '').trim().toLowerCase();
+      const aria = (target.getAttribute('aria-label') || '').trim().toLowerCase();
+      const title = (target.getAttribute('title') || '').trim().toLowerCase();
+      const href = (target.getAttribute('href') || '').trim().toLowerCase();
+
+      const looksLikeLogout =
+        text === 'logout' ||
+        text.includes('logout') ||
+        aria.includes('logout') ||
+        title.includes('logout') ||
+        href.includes('logout');
+
+      if (!looksLikeLogout) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+      nocPortalLogout();
+    }, true);
+  })();
+</script>
+
+</body>
+</html>

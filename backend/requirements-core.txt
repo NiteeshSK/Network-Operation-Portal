@@ -1,0 +1,38 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# CORE RUNTIME — the portal cannot start without these.
+#
+# Kept separate from requirements-rag.txt on purpose. This list is small,
+# stable, and installs in seconds; the RAG list is ~90 packages and several
+# hundred megabytes. Two separate pip layers mean a change to a core pin does
+# not force a reinstall of the entire LangChain/Chroma tree, which is what
+# used to make every rebuild a multi-minute affair.
+# ═══════════════════════════════════════════════════════════════════════════
+
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+sqlalchemy==2.0.35
+psycopg2-binary==2.9.9
+netmiko==4.4.0
+python-dotenv==1.0.1
+pydantic==2.9.2
+apscheduler==3.10.4
+
+# Pinned for compatibility with legacy network gear:
+#   paramiko 3.x removed ssh-rsa (SHA-1) host-key support, which breaks
+#   SSH to old Comware/H3C/HP switches whose firmware only offers ssh-rsa.
+#   2.12.0 was the last release with full ssh-rsa support intact.
+# Pinned cryptography to a version that still bundles TripleDES; paramiko
+#   2.12 imports it, and cryptography 48.0 removes it entirely.
+paramiko==2.12.0
+cryptography<46.0.0
+
+# ── Enterprise execution path for LACP (WinRM → jump host → PowerShell) ────
+# Same library and connection pattern as MSS AD Studio. Only used when
+# LACP_EXEC_MODE=winrm; direct SSH remains the default.
+pywinrm==0.5.0
+
+# ── Spreadsheet import / export for the server fleet ───────────────────────
+# openpyxl reads uploaded .xlsx server lists and writes the fleet snapshot
+# workbook; python-multipart is what lets FastAPI accept the file upload.
+openpyxl==3.1.5
+python-multipart==0.0.12

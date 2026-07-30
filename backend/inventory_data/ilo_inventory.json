@@ -1,0 +1,776 @@
+[
+ {
+  "ilo_ip": "10.25.42.11",
+  "hostname": "",
+  "model": "Proliant node",
+  "serial": "",
+  "rack": "3",
+  "solution": "",
+  "note": "marked unreachable in inventory sheet"
+ },
+ {
+  "ilo_ip": "10.25.42.12",
+  "hostname": "",
+  "model": "Proliant node",
+  "serial": "",
+  "rack": "3",
+  "solution": "",
+  "note": "marked unreachable in inventory sheet"
+ },
+ {
+  "ilo_ip": "10.25.42.13",
+  "hostname": "",
+  "model": "proliant node",
+  "serial": "",
+  "rack": "3",
+  "solution": "",
+  "note": "marked unreachable in inventory sheet"
+ },
+ {
+  "ilo_ip": "10.25.51.31",
+  "hostname": "gccpsesxpce01",
+  "model": "ProLiant DL380 Gen10",
+  "serial": "SGH251WLG2",
+  "rack": "2",
+  "solution": "PCE  Deployment Host",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.32",
+  "hostname": "RPSR01U25PS15.rps.local",
+  "model": "ProLiant DL380 Gen10",
+  "serial": "SGH251WLFC",
+  "rack": "2",
+  "solution": "HPCM",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.33",
+  "hostname": "RPSR01U23PS16",
+  "model": "ProLiant DL380 Gen10",
+  "serial": "SGH251WLFS",
+  "rack": "2",
+  "solution": "HPCM",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.34",
+  "hostname": "gccpsesxmgn03",
+  "model": "ProLiant DL380 Gen10",
+  "serial": "SGH236W57S",
+  "rack": "2",
+  "solution": "HPCM",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.35",
+  "hostname": "gccpsesxmgn02",
+  "model": "ProLiant DL360 Gen10",
+  "serial": "MXQ1310Q7W",
+  "rack": "3",
+  "solution": "Compute",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.36",
+  "hostname": "gccpsesxmgn01",
+  "model": "ProLiant DL360 Gen10",
+  "serial": "MXQ1310Q7V",
+  "rack": "3",
+  "solution": "Compute",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.37",
+  "hostname": "ilo-gccr03u35ps17",
+  "model": "ProLiant DX360 Gen10 8SFF",
+  "serial": "SGH248Y5PY",
+  "rack": "3",
+  "solution": "Nutanix",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.38",
+  "hostname": "ilo-gccr03u33ps15",
+  "model": "ProLiant DX360 Gen10 8SFF",
+  "serial": "SGH248Y5QN",
+  "rack": "3",
+  "solution": "Nutanix",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.39",
+  "hostname": "ilo-gccr03u34ps16",
+  "model": "ProLiant DX360 Gen10 8SFF",
+  "serial": "SGH248Y5PD",
+  "rack": "3",
+  "solution": "Nutanix",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.40",
+  "hostname": "Ilo-RPSR01U20PS13",
+  "model": "ProLiant DL560 Gen8",
+  "serial": "SGH326Y4MW",
+  "rack": "2",
+  "solution": "HPC Compute",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.41",
+  "hostname": "ILOSGH326Y4NN.",
+  "model": "ProLiant DL560 Gen8",
+  "serial": "SGH326Y4NN",
+  "rack": "2",
+  "solution": "HPC Compute",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.61",
+  "hostname": "RPSR01U01PS01",
+  "model": "Synergy 480 Gen10",
+  "serial": "SGH128W26X",
+  "rack": "1",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.62",
+  "hostname": "RPSR01U01PS02",
+  "model": "Synergy 480 Gen10",
+  "serial": "SGH128W26Q",
+  "rack": "1",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.63",
+  "hostname": "RPSR01U01PS03",
+  "model": "Synergy 480 Gen10",
+  "serial": "SGH128W26S",
+  "rack": "1",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.64",
+  "hostname": "RPSR01U01PS04",
+  "model": "Synergy 480 Gen10",
+  "serial": "SGH128W26V",
+  "rack": "1",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.65",
+  "hostname": "ILOSGH128W26N",
+  "model": "Synergy 480 Gen10",
+  "serial": "SGH128W26N",
+  "rack": "1",
+  "solution": "Compute",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.66",
+  "hostname": "",
+  "model": "Synergy node",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": "marked unreachable in inventory sheet"
+ },
+ {
+  "ilo_ip": "10.25.51.67",
+  "hostname": "ILOSGH128W26J",
+  "model": "Synergy 480 Gen10",
+  "serial": "SGH128W26J",
+  "rack": "1",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.68",
+  "hostname": "",
+  "model": "Synergy node",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": "marked unreachable in inventory sheet"
+ },
+ {
+  "ilo_ip": "10.25.51.70",
+  "hostname": "",
+  "model": "Synergy node",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": "marked unreachable in inventory sheet"
+ },
+ {
+  "ilo_ip": "10.25.51.71",
+  "hostname": "",
+  "model": "Synergy node",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": "marked unreachable in inventory sheet"
+ },
+ {
+  "ilo_ip": "10.25.51.72",
+  "hostname": "",
+  "model": "Synergy node",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": "marked unreachable in inventory sheet"
+ },
+ {
+  "ilo_ip": "10.25.51.73",
+  "hostname": "GCCR01U01PS12-ilo",
+  "model": "Synergy 480 Gen10",
+  "serial": "SGH315WTD5",
+  "rack": "1",
+  "solution": "Compute",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.77",
+  "hostname": "",
+  "model": "Synergy node",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": "marked unreachable in inventory sheet"
+ },
+ {
+  "ilo_ip": "10.25.51.78",
+  "hostname": "",
+  "model": "Synergy node",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": "marked unreachable in inventory sheet"
+ },
+ {
+  "ilo_ip": "10.25.51.79",
+  "hostname": "",
+  "model": "Synergy node",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": "marked unreachable in inventory sheet"
+ },
+ {
+  "ilo_ip": "10.25.51.80",
+  "hostname": "",
+  "model": "Synergy node",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": "marked unreachable in inventory sheet"
+ },
+ {
+  "ilo_ip": "10.25.51.81",
+  "hostname": "",
+  "model": "Future Expansion",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.82",
+  "hostname": "",
+  "model": "Future Expansion",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.83",
+  "hostname": "",
+  "model": "Future Expansion",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.84",
+  "hostname": "",
+  "model": "Future Expansion",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.85",
+  "hostname": "",
+  "model": "Future Expansion",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.86",
+  "hostname": "",
+  "model": "Future Expansion",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.87",
+  "hostname": "",
+  "model": "Future Expansion",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.88",
+  "hostname": "",
+  "model": "Future Expansion",
+  "serial": "",
+  "rack": "1",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.131",
+  "hostname": "gccpsazhdvn01",
+  "model": "ProLiant DL380 Gen10 Plus",
+  "serial": "SGH342LKVR",
+  "rack": "3",
+  "solution": "Azure Crash & Burn",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.132",
+  "hostname": "gccpsazhdvn02",
+  "model": "ProLiant DL380 Gen10 Plus",
+  "serial": "SGH342LKVG",
+  "rack": "3",
+  "solution": "Azure Crash & Burn",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.133",
+  "hostname": "gccpsazhpdn03",
+  "model": "ProLiant DL380 Gen10 Plus",
+  "serial": "SGH342LKTW",
+  "rack": "3",
+  "solution": "Azure/VME",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.134",
+  "hostname": "gccpsazhpdn04",
+  "model": "ProLiant DL380 Gen10 Plus",
+  "serial": "SGH342LKW1",
+  "rack": "3",
+  "solution": "Azure/VME",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.135",
+  "hostname": "gccpsazhpdn05",
+  "model": "ProLiant DL380 Gen10 Plus",
+  "serial": "SGH342LKV5",
+  "rack": "3",
+  "solution": "Azure/VME",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.136",
+  "hostname": "gccpsazhpdgpn06",
+  "model": "ProLiant DL380 Gen10 Plus",
+  "serial": "SGH350HHRS",
+  "rack": "3",
+  "solution": "AzureLocal GPU",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.137",
+  "hostname": "gccpsazhpdgpn07",
+  "model": "ProLiant DL380 Gen10 Plus",
+  "serial": "SGH350HHRV",
+  "rack": "3",
+  "solution": "AzureLocal GPU",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.138",
+  "hostname": "ILO-GCCR03U16PS08",
+  "model": "ProLiant DL560 Gen11",
+  "serial": "SGH425JS96",
+  "rack": "3",
+  "solution": "Compute",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.139",
+  "hostname": "ILO-GCCR03U18PS09",
+  "model": "ProLiant DL560 Gen11",
+  "serial": "SGH425JS9H",
+  "rack": "3",
+  "solution": "DAI Team",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.140",
+  "hostname": "ILO-GCCR03U20PS10",
+  "model": "ProLiant DL560 Gen11",
+  "serial": "SGH428H8JH",
+  "rack": "3",
+  "solution": "ESXI CNC Team",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.141",
+  "hostname": "ILO-GCCR03U22PS11",
+  "model": "ProLiant DL560 Gen11",
+  "serial": "SGH428H8JG",
+  "rack": "3",
+  "solution": "ESXI CNC Team",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.142",
+  "hostname": "ILO-SGH439KP4G",
+  "model": "ProLiant DL385 Gen10 Plus",
+  "serial": "SGH439KP4G",
+  "rack": "3",
+  "solution": "StoreOnce",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.143",
+  "hostname": "gccpsesxpsda005",
+  "model": "ProLiant DL380 Gen11",
+  "serial": "SGH439KPP8",
+  "rack": "4",
+  "solution": "SDA GPU Node",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.144",
+  "hostname": "ILODL380G10PN17U30.BGL1.GLOBAL.TSLABS.HPECORP.NET",
+  "model": "ProLiant DL380 Gen10 PlusProLiant DL380 Gen10 Plus",
+  "serial": "SGH236VRBL",
+  "rack": "4",
+  "solution": "Compute",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.145",
+  "hostname": "mindsparks.io.BGL1.GLOBAL.TSLABS.HPECORP.NET",
+  "model": "ProLiant DL380 Gen10 Plus",
+  "serial": "SGH233VQK0",
+  "rack": "4",
+  "solution": "Compute",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.146",
+  "hostname": "ILO-SGH439KPPH",
+  "model": "ProLiant DL380 Gen11(H100)",
+  "serial": "SGH439KPPH",
+  "rack": "4",
+  "solution": "Native K8s-Katonics",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.147",
+  "hostname": "Not set",
+  "model": "ProLiant DL380 Gen10",
+  "serial": "SGH741WHX9",
+  "rack": "4",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.148",
+  "hostname": "not set",
+  "model": "ProLiant DL380 Gen10",
+  "serial": "SGH741WHXA",
+  "rack": "4",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.149",
+  "hostname": "gccpsesxpsda006",
+  "model": "ProLiant DL380 Gen11",
+  "serial": "SGHD32MBH5",
+  "rack": "4",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.150",
+  "hostname": "Not set",
+  "model": "ProLiant DL380 Gen11",
+  "serial": "SGHD33GMMR",
+  "rack": "4",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.151",
+  "hostname": "Not set",
+  "model": "ProLiant DL380 Gen11",
+  "serial": "SGHD33GMN4",
+  "rack": "4",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.152",
+  "hostname": "Not set",
+  "model": "ProLiant DL380 Gen11",
+  "serial": "SGHD33GMKX",
+  "rack": "4",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.153",
+  "hostname": "",
+  "model": "",
+  "serial": "",
+  "rack": "",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.154",
+  "hostname": "",
+  "model": "",
+  "serial": "",
+  "rack": "",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.161",
+  "hostname": "ILO-SGH438K7R4",
+  "model": "ProLiant DL360 Gen11",
+  "serial": "SGH438K7R4",
+  "rack": "4",
+  "solution": "VCF",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.162",
+  "hostname": "ILO-SGH438K7RC",
+  "model": "ProLiant DL360 Gen11",
+  "serial": "SGH438K7RC",
+  "rack": "4",
+  "solution": "VCF",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.163",
+  "hostname": "ILO-SGH438K7S1",
+  "model": "ProLiant DL360 Gen11",
+  "serial": "SGH438K7S1",
+  "rack": "4",
+  "solution": "VCF",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.164",
+  "hostname": "ILO-SGH438K7RL",
+  "model": "ProLiant DL360 Gen11",
+  "serial": "SGH438K7RL",
+  "rack": "4",
+  "solution": "VCF",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.165",
+  "hostname": "ILO-SGH438K7QG",
+  "model": "ProLiant DL360 Gen11",
+  "serial": "SGH438K7QG",
+  "rack": "4",
+  "solution": "VCF",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.166",
+  "hostname": "ILO-SGH438K7RT",
+  "model": "ProLiant DL360 Gen11",
+  "serial": "SGH438K7RT",
+  "rack": "4",
+  "solution": "VCF",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.167",
+  "hostname": "ILO-SGH438K7QP",
+  "model": "ProLiant DL360 Gen11",
+  "serial": "SGH438K7QP",
+  "rack": "4",
+  "solution": "VCF",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.168",
+  "hostname": "ILO-SGH438K7QX",
+  "model": "Proliant node",
+  "serial": "SGH438K7QX",
+  "rack": "4",
+  "solution": "VCF",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.169",
+  "hostname": "",
+  "model": "ProLiant DL360 Gen11",
+  "serial": "SGH506LR8W",
+  "rack": "4",
+  "solution": "NewMGMT-Azure-Local",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.170",
+  "hostname": "",
+  "model": "ProLiant DL360 Gen11",
+  "serial": "SGH506LR93",
+  "rack": "4",
+  "solution": "NewMGMT-Azure-Local",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.171",
+  "hostname": "",
+  "model": "ProLiant DL360 Gen11",
+  "serial": "SGH506LR8N",
+  "rack": "4-U26",
+  "solution": "PCBE/VME",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.172",
+  "hostname": "ILOSGH506LR8F",
+  "model": "ProLiant DL360 Gen11",
+  "serial": "SGH506LR8F",
+  "rack": "4-U27",
+  "solution": "PCBE/VME",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.201",
+  "hostname": "ILO-SGH506LR8N",
+  "model": "ProLiant DL360 Gen11",
+  "serial": "SGH506LR8N",
+  "rack": "4",
+  "solution": "PCBE/VME",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.202",
+  "hostname": "ILO-SGH506LR8F",
+  "model": "ProLiant DL360 Gen11",
+  "serial": "SGH506LR8F",
+  "rack": "4",
+  "solution": "PCBE/VME",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.203",
+  "hostname": "iEXTVUB8PUKJ15Q",
+  "model": "HPE Alletra Storage MP",
+  "serial": "EXTVUB8PUKJ15Q",
+  "rack": "4",
+  "solution": "Aletra MP",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.204",
+  "hostname": "iEXTVUB8PUKJ15M",
+  "model": "HPE Alletra Storage MP",
+  "serial": "EXTVUB8PUKJ15M",
+  "rack": "4",
+  "solution": "Aletra MP",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.234",
+  "hostname": "",
+  "model": "ProLiant DL380 Gen11",
+  "serial": "",
+  "rack": "6",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.235",
+  "hostname": "",
+  "model": "ProLiant DL380 Gen11",
+  "serial": "",
+  "rack": "6",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.236",
+  "hostname": "",
+  "model": "ProLiant DL380 Gen11",
+  "serial": "",
+  "rack": "6",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.237",
+  "hostname": "",
+  "model": "ProLiant DL380 Gen11",
+  "serial": "",
+  "rack": "6",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.238",
+  "hostname": "",
+  "model": "ProLiant DL380 Gen11",
+  "serial": "",
+  "rack": "6",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.51.239",
+  "hostname": "",
+  "model": "ProLiant DL380 Gen11",
+  "serial": "",
+  "rack": "6",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.25.52.223",
+  "hostname": "",
+  "model": "MindSparks Jump Server",
+  "serial": "",
+  "rack": "3",
+  "solution": "",
+  "note": ""
+ },
+ {
+  "ilo_ip": "10.64.154.100",
+  "hostname": "",
+  "model": "Aletra MP Storage",
+  "serial": "",
+  "rack": "BGL",
+  "solution": "",
+  "note": ""
+ }
+]

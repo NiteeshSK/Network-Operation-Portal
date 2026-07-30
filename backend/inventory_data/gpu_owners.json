@@ -1,0 +1,13 @@
+[
+  {"ilo_ip": "10.25.51.138", "gpu_model": "L40",    "owner": "Jabali",         "team": "Ai Data",  "lm": "Subarna"},
+  {"ilo_ip": "10.25.51.139", "gpu_model": "L40",    "owner": "Jabali",         "team": "Ai Data",  "lm": "Subarna"},
+  {"ilo_ip": "10.25.51.147", "gpu_model": "H100X2", "owner": "Dinesh/Kranti",  "team": "Ai Data",  "lm": "Subarna"},
+  {"ilo_ip": "10.25.51.148", "gpu_model": "H100X2", "owner": "Dinesh/Kranti",  "team": "Ai Data",  "lm": "Subarna"},
+  {"ilo_ip": "10.25.51.143", "gpu_model": "A100",   "owner": "Amit Chettri",   "team": "GCC-SDA",  "lm": ""},
+  {"ilo_ip": "10.25.51.149", "gpu_model": "H100",   "owner": "Amit Chettri",   "team": "GCC-SDA",  "lm": ""},
+  {"ilo_ip": "10.25.51.146", "gpu_model": "H100",   "owner": "Kamlesh",        "team": "I&IS",     "lm": "Tanvi"},
+  {"ilo_ip": "10.25.51.151", "gpu_model": "H100",   "owner": "Kamlesh",        "team": "I&IS",     "lm": "Tanvi"},
+  {"ilo_ip": "10.25.51.145", "gpu_model": "L40S",   "owner": "Nishith",        "team": "CNC",      "lm": "Anil NV"},
+  {"ilo_ip": "10.25.51.152", "gpu_model": "L40S",   "owner": "Nishith",        "team": "CNC",      "lm": "Anil NV"},
+  {"ilo_ip": "10.25.51.140", "gpu_model": "L40",    "owner": "Anil NV",        "team": "CNC",      "lm": "Anil NV"}
+]

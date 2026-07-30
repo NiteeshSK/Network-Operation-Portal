@@ -1,0 +1,66 @@
+[
+ {
+  "ip": "10.25.51.2",
+  "name": "GCC-CORE-01",
+  "role": "Core 1",
+  "rack": "Core",
+  "device_type": "hp_comware",
+  "model": "Core switch"
+ },
+ {
+  "ip": "10.25.51.3",
+  "name": "GCC-CORE-02",
+  "role": "Core 2",
+  "rack": "Core",
+  "device_type": "hp_comware",
+  "model": "Core switch"
+ },
+ {
+  "ip": "10.25.51.14",
+  "name": "GCC-Access-R1-01",
+  "role": "Rack 1 switch 1",
+  "rack": "1",
+  "device_type": "aruba_aoscx",
+  "model": "JL635A Aruba 8325-48Y8C"
+ },
+ {
+  "ip": "10.25.51.15",
+  "name": "GCC-Access-R1-02",
+  "role": "Rack 1 switch 2",
+  "rack": "1",
+  "device_type": "aruba_aoscx",
+  "model": "JL635A Aruba 8325-48Y8C"
+ },
+ {
+  "ip": "10.25.51.16",
+  "name": "GCC-Access-R4-01",
+  "role": "Rack 4 switch 1",
+  "rack": "4",
+  "device_type": "aruba_aoscx",
+  "model": "Aruba 8325"
+ },
+ {
+  "ip": "10.25.51.17",
+  "name": "GCC-Access-R4-02",
+  "role": "Rack 4 switch 2",
+  "rack": "4",
+  "device_type": "aruba_aoscx",
+  "model": "Aruba 8325"
+ },
+ {
+  "ip": "10.25.51.18",
+  "name": "GCC-Access-R3-01",
+  "role": "Rack 3 switch 1",
+  "rack": "3",
+  "device_type": "aruba_aoscx",
+  "model": "Aruba 8325"
+ },
+ {
+  "ip": "10.25.51.19",
+  "name": "GCC-Access-R3-02",
+  "role": "Rack 3 switch 2",
+  "rack": "3",
+  "device_type": "aruba_aoscx",
+  "model": "Aruba 8325"
+ }
+]

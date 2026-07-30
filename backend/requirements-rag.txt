@@ -1,0 +1,27 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# RAG LAYER — OPTIONAL (LangChain + ChromaDB + OpenAI client + tiktoken)
+#
+# This file is what makes the backend image expensive: it resolves to roughly
+# 90 packages, including chroma-hnswlib, grpcio, tokenizers and the whole
+# OpenTelemetry tree. Installing it is the bulk of the build time.
+#
+# Every `rag` import in the codebase is done INSIDE a function (see agent.py,
+# main.py and scheduler.py), never at module scope. The portal therefore
+# starts and runs completely normally without this file installed — only the
+# /api/chat retrieval endpoints degrade. That is what lets the Dockerfile
+# make it a build argument:
+#
+#     docker compose build --build-arg INSTALL_RAG=0 noc-backend
+#
+# OpenAI wrappers are pointed at Ollama's /v1 endpoint by default
+# (rag/config.py), so nothing leaves the network unless RAG_OPENAI_BASE_URL
+# is changed.
+# ═══════════════════════════════════════════════════════════════════════════
+
+langchain==0.3.7
+langchain-core==0.3.19
+langchain-openai==0.2.9
+langchain-chroma==0.1.4
+langchain-text-splitters==0.3.2
+chromadb==0.5.20
+tiktoken==0.8.0
